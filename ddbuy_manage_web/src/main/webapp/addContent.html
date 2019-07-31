@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="Css/default.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script language="JavaScript">
+        $(function(){
+            //发异步请获取控制器数据，加载下拉列表
+            $('#categoryid').combobox({
+                url:'getCategoryData',
+                valueField:'id',   //值
+                textField:'name'   //文本
+            });
+
+
+            //实现表单提交,异步
+            $("#addbutton").click(function(){
+                //easyui提交表单
+                $('#form1').form('submit',{
+                    url: 'addContent',
+                    type: 'post',  //必需指post
+                    success: function(data){
+                        var data=$.parseJSON(data);
+                        if(data.result==1)
+                            $.messager.alert("提示","添加成功");
+                        else
+                            $.messager.alert("提示","添加失败");
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+<p>添加广告:
+</p>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <p>广告类型:<input id="categoryid" name="categoryId">
+    </p>
+    <p>标题:
+        <input type="text" name="title" id="textfield" />
+    </p>
+    <p>url:
+        <input type="text" name="url" id="textfield2" />
+    </p>
+    <p>图片:
+        <input type="file" name="file" id="fileField" />
+    </p>
+    <p>状态:
+        <input type="radio" name="status" id="radio" value="1" />
+        启用
+        <input type="radio" name="status" id="radio2" value="0" />
+        禁用 </p>
+    <p>排序:
+        <input type="text" name="sortOrder" id="textfield3" />
+    </p>
+    <p>
+        <input type="button" name="button" id="addbutton" value="添加" />
+    </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

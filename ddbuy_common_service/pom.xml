@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--继承父工程-->
+    <parent>
+        <groupId>com.ddbuy</groupId>
+        <artifactId>ddbuy_parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.ddbuy</groupId>
+    <artifactId>ddbuy_common_service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ddbuy_common_service</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!--添加接口jar包-->
+        <dependency>
+            <groupId>com.ddbuy</groupId>
+            <artifactId>ddbuy_common_interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--实体类工程的jar包-->
+        <dependency>
+            <groupId>com.ddbuy</groupId>
+            <artifactId>ddbuy_entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--dao接口和映射文件的jar包-->
+        <dependency>
+            <groupId>com.ddbuy</groupId>
+            <artifactId>ddbuy_dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--整合Mybatis-->
+
+        <!--mybatis的jar包-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <!--mysql驱动包-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.25</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!--添加mybatis分页插件支持-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+
+        <!--操作Redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
