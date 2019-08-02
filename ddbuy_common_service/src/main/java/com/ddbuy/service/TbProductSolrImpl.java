@@ -41,7 +41,7 @@ public class TbProductSolrImpl implements TbProductSolrService {
   }
   return false;
  }
- 
+
  //获取索引库中的数据
 
 }
