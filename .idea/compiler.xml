@@ -13,6 +13,7 @@
         <module name="ddbuy_manage_web" />
         <module name="ddbuy_protoal_web" />
         <module name="ddbuy_serch_web" />
+        <module name="ddbuy_sso_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

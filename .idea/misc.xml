@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/ddbuy_common_service/pom.xml" />
         <option value="$PROJECT_DIR$/ddbuy_common_interface/pom.xml" />
         <option value="$PROJECT_DIR$/ddbuy_serch_web/pom.xml" />
+        <option value="$PROJECT_DIR$/ddbuy_sso_web/pom.xml" />
       </list>
     </option>
   </component>
